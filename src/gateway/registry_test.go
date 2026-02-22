@@ -130,7 +130,11 @@ func setupGateway(
 	if err != nil {
 		t.Fatalf("client connect: %v", err)
 	}
-	t.Cleanup(func() { session.Close() })
+	t.Cleanup(func() {
+		if err := session.Close(); err != nil {
+			t.Logf("session close: %v", err)
+		}
+	})
 	return session
 }
 

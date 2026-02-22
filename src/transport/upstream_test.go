@@ -57,7 +57,11 @@ func TestUpstream_toolRegistration(t *testing.T) {
 	if err != nil {
 		t.Fatalf("client connect: %v", err)
 	}
-	defer session.Close()
+	defer func() {
+		if err := session.Close(); err != nil {
+			t.Logf("session close: %v", err)
+		}
+	}()
 
 	// List tools.
 	var tools []*mcp.Tool
