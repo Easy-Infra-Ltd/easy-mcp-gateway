@@ -1,0 +1,26 @@
+# Exclude everything by default
+*
+
+# Include necessary files/folders
+!.gitignore
+!LICENSE
+!README.md
+!justfile
+!go.mod
+!go.sum
+!*.go
+!**/*.go
+
+# Explicitly exclude build output
+easymcpgateway
+
+# Exclude dependencies
+vendor/
+
+# Exclude IDE
+.vscode/
+.idea/
+
+# Exclude OS files
+.DS_Store
+Thumbs.db
