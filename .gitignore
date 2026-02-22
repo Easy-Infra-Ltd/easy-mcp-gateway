@@ -1,5 +1,6 @@
 # Exclude everything by default
 *
+!*/
 
 # Include necessary files/folders
 !.gitignore
@@ -10,6 +11,7 @@
 !go.sum
 !*.go
 !**/*.go
+!config.json.example
 
 # Explicitly exclude build output
 easymcpgateway
