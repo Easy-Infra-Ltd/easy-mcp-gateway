@@ -117,7 +117,7 @@ func (dm *DownstreamManager) connect(ctx context.Context, ds config.DownstreamCo
 	client := mcp.NewClient(
 		&mcp.Implementation{
 			Name:    "easy-mcp-gateway",
-			Version: "0.1.0",
+			Version: Version,
 		},
 		&mcp.ClientOptions{Logger: dm.logger},
 	)

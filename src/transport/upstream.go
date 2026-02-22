@@ -26,7 +26,7 @@ func NewUpstream(cfg config.UpstreamConfig, logger *slog.Logger) *Upstream {
 	srv := mcp.NewServer(
 		&mcp.Implementation{
 			Name:    "easy-mcp-gateway",
-			Version: "0.1.0",
+			Version: Version,
 		},
 		&mcp.ServerOptions{Logger: logger},
 	)
