@@ -1,0 +1,27 @@
+{
+  "upstream": {
+    "transport": "stdio"
+  },
+  "downstream": [
+    {
+      "name": "example-stdio",
+      "transport": "stdio",
+      "command": ["npx", "-y", "@modelcontextprotocol/server-everything"]
+    },
+    {
+      "name": "example-http",
+      "transport": "http",
+      "url": "http://localhost:3001/mcp"
+    }
+  ],
+  "sanitization": {
+    "maxResponseChars": 16000,
+    "enablePromptInjectionDetection": true,
+    "enableInvisibleTextRemoval": true,
+    "enableURLValidation": true,
+    "enableBoundaryInjection": true,
+    "enableSystemOverrideDetection": true,
+    "disableBuiltInPatterns": false,
+    "customInjectionPatterns": []
+  }
+}
